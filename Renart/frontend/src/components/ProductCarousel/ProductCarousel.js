@@ -19,7 +19,7 @@ const ProductCarousel = () => {
     useEffect(() => {
         async function fetchProducts() {
             try {
-                const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+                const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/products`;
                 const res = await fetch(apiUrl);
                 if (!res.ok) throw new Error("API fetch error");
                 const data = await res.json();
