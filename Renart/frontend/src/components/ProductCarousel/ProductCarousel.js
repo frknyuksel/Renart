@@ -40,7 +40,7 @@ const ProductCarousel = () => {
         return 0;
     });
 
-    if (loading) return <p className="text-center mt-6">Loading products...</p>;
+    if (loading) return (<div className="spinner"></div>);
     if (error) return <p className="text-center mt-6 text-red-600">Error: {error}</p>;
     if (products.length === 0) return <p className="text-center mt-6">No products found.</p>;
 

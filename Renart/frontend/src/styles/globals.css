@@ -48,7 +48,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* ✅ sola hizalı */
     transition: transform 0.3s ease;
     cursor: default;
 }
@@ -161,7 +160,7 @@
     font-size: 16px;
     position: relative;
     color: #d1d5db;
-    /* boş yıldız rengi (gri) */
+
     margin-right: 2px;
     display: inline-block;
     width: 16px;
@@ -170,23 +169,21 @@
 
 .star.full {
     color: #f6c768;
-    /* dolu yıldız sarı */
+
 }
 
 .star.half {
     color: #d1d5db;
-    /* önce gri renk */
+
 }
 
-/* yarım yıldızın sarı yarısını ::before ile yapıyoruz */
+
 .star.half::before {
     content: "★";
     color: #f6c768;
-    /* sarı */
     position: absolute;
     left: 0;
     width: 50%;
-    /* yıldızın yarısını kapla */
     overflow: hidden;
     top: 0;
     display: inline-block;
@@ -196,7 +193,7 @@
 
 .star.empty {
     color: #d1d5db;
-    /* boş yıldız gri */
+
 }
 
 .rating-score {
@@ -204,4 +201,22 @@
     font-size: 14px;
     color: #37383a;
     font-family: "Avenir-Book", sans-serif;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(156, 163, 175, 0.5);
+    border-top-color: #4b5563;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 40px auto;
+    display: block;
+
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }

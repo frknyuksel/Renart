@@ -9,9 +9,9 @@ require("dotenv").config();
 const GOLD_API_URL = "https://www.goldapi.io/api/XAU/USD";
 const GOLD_API_KEY = process.env.GOLD_API_KEY;
 
-let cachedGoldPrice = 2200; // fallback ons fiyatı USD
+let cachedGoldPrice = 2200;
 let lastFetchTime = 0;
-const CACHE_DURATION = 10 * 60 * 1000; // 10 dakika
+const CACHE_DURATION = 10 * 60 * 1000;
 
 async function fetchGoldPrice() {
     const now = Date.now();
@@ -66,11 +66,11 @@ router.get("/", async (req, res) => {
     }
 });
 
-// Ek olarak goldprice endpoint'i
+
 router.get("/goldprice", async (req, res) => {
     const goldPrice = await fetchGoldPrice();
     res.json({ goldPriceOunce: goldPrice });
 });
 
-// fetchGoldPrice fonksiyonunu export et ki server.js kullanabilsin (opsiyonel)
+
 module.exports = router;
